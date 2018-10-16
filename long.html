@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Code Golf</title>
+  </head>
+  <body>
+    <canvas id="c"></canvas>
+    <script>
+      let canvas = document.getElementById('c');
+      let ctx = canvas.getContext('2d');
+
+      canvas.width = 100;
+      canvas.height = 100;
+
+      let x = 0;
+
+      function loop() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        if (x > canvas.width){
+        x = -20;
+        } else {
+        x = x + 2;
+        }
+
+        ctx.fillRect(x, 20, 20, 20);
+        requestAnimationFrame(loop);
+      }
+
+      loop();
+    </script>
+  </body>
+</html>
